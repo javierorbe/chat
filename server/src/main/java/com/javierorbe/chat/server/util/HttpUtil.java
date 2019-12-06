@@ -8,12 +8,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class HttpUtil {
 
+    private static final HttpClient HTTP_CLIENT = HttpClient.newBuilder().build();
+
     public static CompletableFuture<String> httpGet(String uri) {
-        HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest
                 .newBuilder(URI.create(uri))
                 .build();
-        return httpClient
+        return HTTP_CLIENT
                 .sendAsync(request, HttpResponse.BodyHandlers.ofString())
                 .thenApply(HttpResponse::body);
     }

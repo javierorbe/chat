@@ -15,7 +15,7 @@ public class YandexTranslationService implements TranslationService {
     private static final Gson GSON = new Gson();
 
     private static final String TRANSLATE_URL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=%s&lang=%s&text=%s";
-    private static final String DETECT_LANGUAGE_URL = "https://translate.yandex.net/api/v1.5/tr.json/detect?key=%s&?text=%s";
+    private static final String DETECT_LANGUAGE_URL = "https://translate.yandex.net/api/v1.5/tr.json/detect?key=%s&text=%s";
 
     private final String apiKey;
 
